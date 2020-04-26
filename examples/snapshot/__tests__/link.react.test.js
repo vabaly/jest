@@ -1,4 +1,5 @@
 // Copyright 2004-present Facebook. All Rights Reserved.
+// 此测试文件展示了同一个组件的不同情况分别该保持不变
 
 'use strict';
 

@@ -54,9 +54,11 @@ FAIL __tests__/onlyConstructs.test.js
     Missing second argument. It must be a callback function. Perhaps you want to use \`test.todo\` for a test placeholder.
 
       1 | it('it', () => {});
-    > 2 | it('it, no implementation');
+    > 2 | test.only('test.only', () => {});
         | ^
-      3 | test('test, no implementation');
+      3 | it.only('it.only', () => {});
+      4 | fit('fit', () => {});
+      5 | 
 
       at Object.it (__tests__/onlyConstructs.test.js:2:1)
 `;

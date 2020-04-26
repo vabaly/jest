@@ -1,5 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+// 每个测试用例都会生成一份快照，通过导出名字不同来辨别，导出的名字就是测试用例的名字
+// 一个测试用例里面多个 .toMatchSnapshot 等方法的调用，即多次匹配，每一次也都会生成一个快照，导出的名字是测试用例的名字加上匹配的序号
+// 比如下面这个 `changes the class when hovered 1` 就是测试用例 `changes the class when hovered` 的第一次匹配对应的快照
 exports[`changes the class when hovered 1`] = `
 <a
   className="normal"

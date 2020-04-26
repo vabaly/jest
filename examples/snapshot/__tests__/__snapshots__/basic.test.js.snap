@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Object match 1`] = `
+Object {
+  "createdAt": Any<Date>,
+  "id": Any<Number>,
+  "name": "LeBron James",
+}
+`;
+
+exports[`boolean match 1`] = `true`;
+
+exports[`null match 1`] = `null`;
+
+exports[`number match 1`] = `0`;
+
+exports[`string match 1`] = `""`;

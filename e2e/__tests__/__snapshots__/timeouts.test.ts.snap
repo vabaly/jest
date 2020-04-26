@@ -1,13 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`does not exceed the command line testTimeout 1`] = `
-PASS __tests__/a-banana.js
-  ✓ banana
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+
+FAIL __tests__/a-banana.js
+  ✕ banana
+
+  ● banana
+
+    : Timeout - Async callback was not invoked within the 20ms timeout specified by jest.setTimeout.Timeout - Async callback was not invoked within the 20ms timeout specified by jest.setTimeout.Error:
+
+      1 | jest.setTimeout(20);
+      2 | 
+    > 3 | test('banana', () => {
+        | ^
+      4 |   return new Promise(resolve => {
+      5 |     setTimeout(resolve, 100);
+      6 |   });
+
+      at new Spec (../../packages/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Object.test (__tests__/a-banana.js:3:1)
 `;
 
 exports[`does not exceed the command line testTimeout 2`] = `
-Test Suites: 1 passed, 1 total
-Tests:       1 passed, 1 total
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 total
 Snapshots:   0 total
 Time:        <<REPLACED>>
 Ran all test suites.

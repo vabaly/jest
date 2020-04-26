@@ -1,20 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Upgrade help logs a warning when \`scriptPreprocessor\` and/or \`preprocessorIgnorePatterns\` are used 1`] = `
-"<yellow><bold><bold>●</><bold> Deprecation Warning</>:</>
-<yellow></>
-<yellow>  Option <bold>\\"preprocessorIgnorePatterns\\"</> was replaced by <bold>\\"transformIgnorePatterns\\"</>, which support multiple preprocessors.</>
-<yellow></>
-<yellow>  Jest now treats your current configuration as:</>
-<yellow>  {</>
-<yellow>    <bold>\\"transformIgnorePatterns\\"</>: <bold>[\\"bar/baz\\", \\"qux/quux\\"]</></>
-<yellow>  }</>
-<yellow></>
-<yellow>  Please update your configuration.</>
-<yellow></>
-<yellow>  <bold>Configuration Documentation:</></>
-<yellow>  https://jestjs.io/docs/configuration.html</>
-<yellow></>"
+"● Deprecation Warning:
+
+  Option \\"preprocessorIgnorePatterns\\" was replaced by \\"transformIgnorePatterns\\", which support multiple preprocessors.
+
+  Jest now treats your current configuration as:
+  {
+    \\"transformIgnorePatterns\\": [\\"bar/baz\\", \\"qux/quux\\"]
+  }
+
+  Please update your configuration.
+
+  Configuration Documentation:
+  https://jestjs.io/docs/configuration.html
+"
 `;
 
 exports[`displayName generates a default color for the runner jest-runner 1`] = `"yellow"`;
@@ -28,172 +28,172 @@ exports[`displayName generates a default color for the runner jest-runner-tslint
 exports[`displayName generates a default color for the runner undefined 1`] = `"white"`;
 
 exports[`displayName should throw an error when displayName is is an empty object 1`] = `
-"<red><bold><bold>● </><bold>Validation Error</>:</>
-<red></>
-<red>  Option \\"<bold>displayName</>\\" must be of type:</>
-<red></>
-<red>  {</>
-<red>    name: string;</>
-<red>    color: string;</>
-<red>  }</>
-<red></>
-<red></>
-<red>  <bold>Configuration Documentation:</></>
-<red>  https://jestjs.io/docs/configuration.html</>
-<red></>"
+"● Validation Error:
+
+  Option \\"displayName\\" must be of type:
+
+  {
+    name: string;
+    color: string;
+  }
+
+
+  Configuration Documentation:
+  https://jestjs.io/docs/configuration.html
+"
 `;
 
 exports[`displayName should throw an error when displayName is missing color 1`] = `
-"<red><bold><bold>● </><bold>Validation Error</>:</>
-<red></>
-<red>  Option \\"<bold>displayName</>\\" must be of type:</>
-<red></>
-<red>  {</>
-<red>    name: string;</>
-<red>    color: string;</>
-<red>  }</>
-<red></>
-<red></>
-<red>  <bold>Configuration Documentation:</></>
-<red>  https://jestjs.io/docs/configuration.html</>
-<red></>"
+"● Validation Error:
+
+  Option \\"displayName\\" must be of type:
+
+  {
+    name: string;
+    color: string;
+  }
+
+
+  Configuration Documentation:
+  https://jestjs.io/docs/configuration.html
+"
 `;
 
 exports[`displayName should throw an error when displayName is missing name 1`] = `
-"<red><bold><bold>● </><bold>Validation Error</>:</>
-<red></>
-<red>  Option \\"<bold>displayName</>\\" must be of type:</>
-<red></>
-<red>  {</>
-<red>    name: string;</>
-<red>    color: string;</>
-<red>  }</>
-<red></>
-<red></>
-<red>  <bold>Configuration Documentation:</></>
-<red>  https://jestjs.io/docs/configuration.html</>
-<red></>"
+"● Validation Error:
+
+  Option \\"displayName\\" must be of type:
+
+  {
+    name: string;
+    color: string;
+  }
+
+
+  Configuration Documentation:
+  https://jestjs.io/docs/configuration.html
+"
 `;
 
 exports[`displayName should throw an error when displayName is using invalid values 1`] = `
-"<red><bold><bold>● </><bold>Validation Error</>:</>
-<red></>
-<red>  Option \\"<bold>displayName</>\\" must be of type:</>
-<red></>
-<red>  {</>
-<red>    name: string;</>
-<red>    color: string;</>
-<red>  }</>
-<red></>
-<red></>
-<red>  <bold>Configuration Documentation:</></>
-<red>  https://jestjs.io/docs/configuration.html</>
-<red></>"
+"● Validation Error:
+
+  Option \\"displayName\\" must be of type:
+
+  {
+    name: string;
+    color: string;
+  }
+
+
+  Configuration Documentation:
+  https://jestjs.io/docs/configuration.html
+"
 `;
 
 exports[`preset throws when module was found but no "jest-preset.js" or "jest-preset.json" files 1`] = `
-"<red><bold><bold>● </><bold>Validation Error</>:</>
-<red></>
-<red>  Module <bold>exist-but-no-jest-preset</> should have \\"jest-preset.js\\" or \\"jest-preset.json\\" file at the root.</>
-<red></>
-<red>  <bold>Configuration Documentation:</></>
-<red>  https://jestjs.io/docs/configuration.html</>
-<red></>"
+"● Validation Error:
+
+  Module exist-but-no-jest-preset should have \\"jest-preset.js\\" or \\"jest-preset.json\\" file at the root.
+
+  Configuration Documentation:
+  https://jestjs.io/docs/configuration.html
+"
 `;
 
 exports[`preset throws when preset not found 1`] = `
-"<red><bold><bold>● </><bold>Validation Error</>:</>
-<red></>
-<red>  Preset <bold>doesnt-exist</> not found.</>
-<red></>
-<red>  <bold>Configuration Documentation:</></>
-<red>  https://jestjs.io/docs/configuration.html</>
-<red></>"
+"● Validation Error:
+
+  Preset doesnt-exist not found.
+
+  Configuration Documentation:
+  https://jestjs.io/docs/configuration.html
+"
 `;
 
 exports[`rootDir throws if the options is missing a rootDir property 1`] = `
-"<red><bold><bold>● </><bold>Validation Error</>:</>
-<red></>
-<red>  Configuration option <bold>rootDir</> must be specified.</>
-<red></>
-<red>  <bold>Configuration Documentation:</></>
-<red>  https://jestjs.io/docs/configuration.html</>
-<red></>"
+"● Validation Error:
+
+  Configuration option rootDir must be specified.
+
+  Configuration Documentation:
+  https://jestjs.io/docs/configuration.html
+"
 `;
 
 exports[`runner throw error when a runner is not found 1`] = `
-"<red><bold><bold>● </><bold>Validation Error</>:</>
-<red></>
-<red>  Jest Runner <bold>missing-runner</> cannot be found. Make sure the <bold>runner</> configuration option points to an existing node module.</>
-<red></>
-<red>  <bold>Configuration Documentation:</></>
-<red>  https://jestjs.io/docs/configuration.html</>
-<red></>"
+"● Validation Error:
+
+  Jest Runner missing-runner cannot be found. Make sure the runner configuration option points to an existing node module.
+
+  Configuration Documentation:
+  https://jestjs.io/docs/configuration.html
+"
 `;
 
 exports[`setupTestFrameworkScriptFile logs a deprecation warning when \`setupTestFrameworkScriptFile\` is used 1`] = `
-"<yellow><bold><bold>●</><bold> Deprecation Warning</>:</>
-<yellow></>
-<yellow>  Option <bold>\\"setupTestFrameworkScriptFile\\"</> was replaced by configuration <bold>\\"setupFilesAfterEnv\\"</>, which supports multiple paths.</>
-<yellow></>
-<yellow>  Please update your configuration.</>
-<yellow></>
-<yellow>  <bold>Configuration Documentation:</></>
-<yellow>  https://jestjs.io/docs/configuration.html</>
-<yellow></>"
+"● Deprecation Warning:
+
+  Option \\"setupTestFrameworkScriptFile\\" was replaced by configuration \\"setupFilesAfterEnv\\", which supports multiple paths.
+
+  Please update your configuration.
+
+  Configuration Documentation:
+  https://jestjs.io/docs/configuration.html
+"
 `;
 
 exports[`setupTestFrameworkScriptFile logs an error when \`setupTestFrameworkScriptFile\` and \`setupFilesAfterEnv\` are used 1`] = `
-"<red><bold><bold>● </><bold>Validation Error</>:</>
-<red></>
-<red>  Options: <bold>setupTestFrameworkScriptFile</> and <bold>setupFilesAfterEnv</> cannot be used together.</>
-<red>  Please change your configuration to only use <bold>setupFilesAfterEnv</>.</>
-<red></>
-<red>  <bold>Configuration Documentation:</></>
-<red>  https://jestjs.io/docs/configuration.html</>
-<red></>"
+"● Validation Error:
+
+  Options: setupTestFrameworkScriptFile and setupFilesAfterEnv cannot be used together.
+  Please change your configuration to only use setupFilesAfterEnv.
+
+  Configuration Documentation:
+  https://jestjs.io/docs/configuration.html
+"
 `;
 
 exports[`testEnvironment throws on invalid environment names 1`] = `
-"<red><bold><bold>● </><bold>Validation Error</>:</>
-<red></>
-<red>  Test environment <bold>phantom</> cannot be found. Make sure the <bold>testEnvironment</> configuration option points to an existing node module.</>
-<red></>
-<red>  <bold>Configuration Documentation:</></>
-<red>  https://jestjs.io/docs/configuration.html</>
-<red></>"
+"● Validation Error:
+
+  Test environment phantom cannot be found. Make sure the testEnvironment configuration option points to an existing node module.
+
+  Configuration Documentation:
+  https://jestjs.io/docs/configuration.html
+"
 `;
 
 exports[`testMatch throws if testRegex and testMatch are both specified 1`] = `
-"<red><bold><bold>● </><bold>Validation Error</>:</>
-<red></>
-<red>  Configuration options <bold>testMatch</> and <bold>testRegex</> cannot be used together.</>
-<red></>
-<red>  <bold>Configuration Documentation:</></>
-<red>  https://jestjs.io/docs/configuration.html</>
-<red></>"
+"● Validation Error:
+
+  Configuration options testMatch and testRegex cannot be used together.
+
+  Configuration Documentation:
+  https://jestjs.io/docs/configuration.html
+"
 `;
 
-exports[`testPathPattern <regexForTestFiles> ignores invalid regular expressions and logs a warning 1`] = `"<red>  Invalid testPattern a( supplied. Running all tests instead.</>"`;
+exports[`testPathPattern <regexForTestFiles> ignores invalid regular expressions and logs a warning 1`] = `"  Invalid testPattern a( supplied. Running all tests instead."`;
 
-exports[`testPathPattern --testPathPattern ignores invalid regular expressions and logs a warning 1`] = `"<red>  Invalid testPattern a( supplied. Running all tests instead.</>"`;
+exports[`testPathPattern --testPathPattern ignores invalid regular expressions and logs a warning 1`] = `"  Invalid testPattern a( supplied. Running all tests instead."`;
 
 exports[`testTimeout should throw an error if timeout is a negative number 1`] = `
-"<red><bold><bold>● </><bold>Validation Error</>:</>
-<red></>
-<red>  Option \\"<bold>testTimeout</>\\" must be a natural number.</>
-<red></>
-<red>  <bold>Configuration Documentation:</></>
-<red>  https://jestjs.io/docs/configuration.html</>
-<red></>"
+"● Validation Error:
+
+  Option \\"testTimeout\\" must be a natural number.
+
+  Configuration Documentation:
+  https://jestjs.io/docs/configuration.html
+"
 `;
 
 exports[`watchPlugins throw error when a watch plugin is not found 1`] = `
-"<red><bold><bold>● </><bold>Validation Error</>:</>
-<red></>
-<red>  Watch plugin <bold>missing-plugin</> cannot be found. Make sure the <bold>watchPlugins</> configuration option points to an existing node module.</>
-<red></>
-<red>  <bold>Configuration Documentation:</></>
-<red>  https://jestjs.io/docs/configuration.html</>
-<red></>"
+"● Validation Error:
+
+  Watch plugin missing-plugin cannot be found. Make sure the watchPlugins configuration option points to an existing node module.
+
+  Configuration Documentation:
+  https://jestjs.io/docs/configuration.html
+"
 `;

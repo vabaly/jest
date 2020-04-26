@@ -10,6 +10,8 @@
 
 <h2 align="center">🃏 Delightful JavaScript Testing</h2>
 
+[学习笔记](./study/README.md)
+
 **👩🏻‍💻 Developer Ready**: A comprehensive JavaScript testing solution. Works out of the box for most JavaScript projects.
 
 **🏃🏽 Instant Feedback**: Fast, interactive watch mode only runs test files related to changed files.

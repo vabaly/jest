@@ -9,7 +9,9 @@ Ran all test suites related to files matching /a.js|b.js/i.
 `;
 
 exports[`--findRelatedTests flag coverage configuration is applied correctly 2`] = `
-PASS __tests__/a.test.js
+
+PASS __tests__/test.test.js
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
 ✓ a
 `;
 
