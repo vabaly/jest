@@ -2,25 +2,31 @@
 
 'use strict';
 
+// 使用模拟的 request 函数
 jest.mock('../request');
 
 import * as user from '../user';
 
 // Testing promise can be done using `.resolves`.
 it('works with resolves', () => {
+  //【Todo】 这个到底有什么用？
   expect.assertions(1);
+  // 也可以使用 expect(<Promise>).resolves.<Matcher> 方法
+  // 这本身返回的也是 Promise
   return expect(user.getUserName(5)).resolves.toEqual('Paul');
 });
 
 // The assertion for a promise must be returned.
 it('works with promises', () => {
   expect.assertions(1);
+  // 返回一个 Promise，只要 Promise 链最后使用了 `expect` 即可
   return user.getUserName(4).then(data => expect(data).toEqual('Mark'));
 });
 
 // async/await can be used.
 it('works with async/await', async () => {
   expect.assertions(1);
+  // 可以是一个 async / await 函数，然后就和同步一样使用 expect 了
   const data = await user.getUserName(4);
   expect(data).toEqual('Mark');
 });
