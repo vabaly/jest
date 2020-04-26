@@ -15,7 +15,9 @@
 
 1. `expect.assertions` 到底有什么用？
 
-## 时间模拟
+## 各种模拟
+
+### 时间模拟
 
 - 首先，需要声明自己要使用模拟的时间，而非实际的时间，在文件最上面写 `jest.useFakeTimers()`
 - 其次，每个测试用例都需要重置（重新初始化）定时器，使用 `jest.spyOn` 来往 `global` 全局对象里面加入定时器
@@ -26,3 +28,27 @@
 
 Jest 的时间模拟并没有去掉 JavaScript 的事件循环的概念，当执行假的定时器时，也会回掉函数放入到队列中，然后通过一些方法来去掉时间概念或快进时间（没有去掉时间概念），从而让回调函数立即执行。
 
+### 模块模拟
+
+【Todo】可以对自己写的模块或者原生模块进行模拟
+
+### class 模拟
+
+【Todo】
+
+### Bypassing module mocks
+
+【Todo】
+
+## 如何做好一个测试
+
+- [可以时常参考的文章](https://insights.thoughtworks.cn/practical-test-pyramid/)
+
+### 如何做好一个单元测试
+
+- [可以时常参考的文章](https://github.com/linesh-simplicity/linesh-simplicity.github.io/issues/200)
+
+#### 重点
+
+- 单元测试中不要包含逻辑，顶多就是 定义数据 => 调用函数等被测对象 => 断言，即希望是什么样
+- reducers 是需要 100% 测试覆盖率的，唯一的输入有唯一的输出，是天然的单元测试对象，且业务逻辑基本在这里面了

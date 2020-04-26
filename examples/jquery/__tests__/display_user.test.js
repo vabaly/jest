@@ -8,6 +8,7 @@ jest.mock('../fetchCurrentUser.js');
 
 it('displays a user after a click', () => {
   // Set up our document body
+  // Jest 中可以直接使用 DOM API，因为它内置了 `jsdom` 的实现
   document.body.innerHTML =
     '<div>' +
     '  <span id="username" />' +
