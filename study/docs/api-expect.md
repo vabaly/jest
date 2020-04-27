@@ -19,7 +19,10 @@
 - [expect.anything()](#expect-anything)
 - [expect.any(constructor)](#expect-any)
 - [expect.arrayContaining(array)](#expect-array-containing)
-
+- [expect.assertions(number)](#expect-assertions)
+- [expect.hasAssertions()](#expect-has-assertions)
+- [expect.not.arrayContaining(array)](#expect-not-array-containing)
+- [expect.addSnapshotSerializer(serializer)](#expect-add-snapshot-serializer)
 
 ## 方法
 
@@ -321,7 +324,122 @@ test('randocall calls its callback with a number', () => {
 
 ### <a href='#expect-array-containing'>expect.arrayContaining(array)</a>
 
-未完待续
+`expect.arrayContaining(array)` 的返回值表示包含 `array` 数组的任意一个超集，也就是说断言中接收的值是期望的值 `array` 的超集，即断言接收的数组中的元素在期望的数组中可以没有，但是期望的数组中的元素在接收的数组中必须都得有。
+
+它可以用在以下的匹配函数中代替字面量：
+
+- 在 `toEqual` 或 `toBeCalledWith` 中作为参数
+- 在 `objectContaining` 或 `toMatchObject` 中作为属性【Todo，不是很理解】
+
+```js
+describe('arrayContaining', () => {
+  const expected = ['Alice', 'Bob'];
+  it('matches even if received contains additional elements', () => {
+    // ['Alice', 'Bob', 'Eve'] 等于 ['Alice', 'Bob'] 的某一个超集，对的
+    expect(['Alice', 'Bob', 'Eve']).toEqual(expect.arrayContaining(expected));
+  });
+  it('does not match if received does not contain expected elements', () => {
+    // ['Bob', 'Eve'] 不等于 ['Alice', 'Bob'] 的任何一个超集，对的
+    expect(['Bob', 'Eve']).not.toEqual(expect.arrayContaining(expected));
+  });
+});
+```
+
+```js
+describe('Beware of a misunderstanding! A sequence of dice rolls', () => {
+  const expected = [1, 2, 3, 4, 5, 6];
+  it('matches even with an unexpected number 7', () => {
+    // [4, 1, 6, 7, 3, 5, 2, 5, 4, 6] 等于 [1, 2, 3, 4, 5, 6] 的某一个超集，对的
+    expect([4, 1, 6, 7, 3, 5, 2, 5, 4, 6]).toEqual(
+      expect.arrayContaining(expected),
+    );
+  });
+  it('does not match without an expected number 2', () => {
+    // [4, 1, 6, 7, 3, 5, 7, 5, 4, 6] 不等于 [1, 2, 3, 4, 5, 6] 的任何一个超集，对的
+    expect([4, 1, 6, 7, 3, 5, 7, 5, 4, 6]).not.toEqual(
+      expect.arrayContaining(expected),
+    );
+  });
+});
+```
+
+### <a href='#expect-assertions'>expect.assertions(number)</a>
+
+`expect.assertions(number)` 用来验证在测试中是否调用了指定数量的断言（译者注：可以理解为断言的断言），这在测试异步代码的时候非常有用，用来确认异步回调后的断言确实被调用了（译者注：而不会因为某些情况没有调用而不被监测到）。
+
+举个例子，假设现在有一个 `doAsync` 函数，它接收 `callback1` 和 `callback2` 两个回调函数，它们在一个异步过程后被调用，顺序无关紧要。那么我们可以写下面这样一个测试：
+
+```js
+test('doAsync calls both callbacks', () => {
+  // 断言测试中的断言会被调用两次
+  expect.assertions(2);
+  function callback1(data) {
+    expect(data).toBeTruthy();
+  }
+  function callback2(data) {
+    expect(data).toBeTruthy();
+  }
+
+  doAsync(callback1, callback2);
+});
+```
+
+其中 `expect.assertions(2)` 可以保证两个回调函数中的断言都被实际调用。
+
+### <a href='#expect-has-assertions'>expect.hasAssertions()</a>
+
+`expect.hasAssertions()` 用来验证测试用例中至少有一个断言被调用，这在测试异步代码的时候非常有用，用来确认异步回调后的断言确实被调用了。
+
+举个例子，现在有一些函数来处理状态。`prepareState` 调用一个回调函数，其参数是一个状态对象，`validateState` 接收这个状态对象并进行一些处理，返回处理后的状态对象，`waitOnState` 函数返回一个 `Promise`，并在 `prepareState` 中所有的回调函数执行完后再进行决议。那这个测试可以这样写：
+
+```js
+test('prepareState prepares a valid state', () => {
+  // 整个测试至少被调用了一次断言
+  expect.hasAssertions();
+  // 异步调用
+  prepareState(state => {
+    expect(validateState(state)).toBeTruthy();
+  });
+  return waitOnState();
+});
+```
+
+其中 `expect.hasAssertions()` 可以保证 `prepareState` 回调函数中的断言都被实际调用。
+
+### <a href='#expect-not-array-containing'>expect.not.arrayContaining(array)</a>
+
+`expect.not.arrayContaining(array)` 的返回值表示不是 `array` 的超集，也就是说断言接收的数组不包含期望数组中的所有元素，也可说是期望的数组不是接收的数组的子集。
+
+它和 `expect.arrayContaining` 正好相反。
+
+```js
+describe('not.arrayContaining', () => {
+  const expected = ['Samantha'];
+
+  it('matches if the actual array does not contain the expected elements', () => {
+    // ['Alice', 'Bob', 'Eve'] 等于 除 ['Samantha'] 超集以外的某个数组
+    expect(['Alice', 'Bob', 'Eve']).toEqual(
+      expect.not.arrayContaining(expected),
+    );
+  });
+});
+```
+
+### <a href='#expect-not-object-containing'>expect.not.objectContaining(object)</a>
+
+### <a href='#expect-not-string-containing'>expect.not.stringContaining(string)</a>
+
+### <a href='#expect-not-string-matching'>expect.not.stringMatching(string | regexp)</a>
+
+### <a href='#expect-object-containing'>expect.objectContaining(object)</a>
+
+### <a href='#expect-string-containing'>expect.stringContaining(string)</a>
+
+### <a href='#expect-string-matching'>expect.stringMatching(string | regexp)</a>
+
+### <a href='#expect-add-snapshot-serializer'>expect.addSnapshotSerializer(serializer)</a>
+
+
 
 ## 涉及到的其他库的知识
 
